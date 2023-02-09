@@ -1,0 +1,23 @@
+{
+    "name": "volodymyr-klymniuk/swoole-server-bundle",
+    "description": "Symfony Swoole HTTP Server Bundle",
+    "type": "library",
+    "license": "MIT-advertising",
+    "autoload": {
+        "psr-4": {
+            "VolodymyrKlymniuk\\SwooleServerBundle\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Volodymyr Klymniuk",
+            "email": "Volodymyr.Klymniuk@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/framework-bundle": "^6.2",
+        "upscale/swoole-blackfire": "^4.0"
+    },
+    "prefer-stable": true
+}

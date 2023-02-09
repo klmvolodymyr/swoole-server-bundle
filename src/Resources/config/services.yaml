@@ -1,0 +1,15 @@
+services:
+  _defaults:
+      autowire: true
+      autoconfigure: true
+      public: false
+
+  VolodymyrKlymniuk\SwooleServerBundle\Swoole\Server:
+    public: true
+    arguments: ["", "", "", "@kernel"]
+
+  VolodymyrKlymniuk\SwooleServerBundle\Command\:
+    resource: '../../Command'
+    exclude: '../../Command/{ServerCommand.php}'
+    tags:
+      - console.command

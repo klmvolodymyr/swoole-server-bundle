@@ -14,10 +14,10 @@
             "email": "Volodymyr.Klymniuk@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "symfony/framework-bundle": "^6.2",
         "upscale/swoole-blackfire": "^4.0"
     },
+    "minimum-stability": "stable",
     "prefer-stable": true
 }

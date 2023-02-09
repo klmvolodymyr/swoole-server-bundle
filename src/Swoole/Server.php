@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace VolodymyrKlymniuk\SwooleServerBundle\Swoole;
 
-use SwooleServerBundle\Exception\SwooleException;
-use SwooleServerBundle\Swoole\Request;
-use SwooleServerBundle\Swoole\Response;
+use Swoole\Process;
+use Symfony\Component\HttpKernel\KernelInterface;
+use VolodymyrKlymniuk\SwooleServerBundle\Exception\SwooleException;
+use Upscale\Swoole\Blackfire\Profiler;
 
 class Server
 {
@@ -61,7 +62,7 @@ class Server
     /**
      * @param string $host
      *
-     * @return \SwooleServerBundle\Swoole\Server
+     * @return \VolodymyrKlymniuk\SwooleServerBundle\Swoole\Server
      */
     public function setHost(string $host): self
     {

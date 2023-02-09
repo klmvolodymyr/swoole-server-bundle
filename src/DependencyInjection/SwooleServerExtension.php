@@ -1,7 +1,6 @@
 <?php
 declare(strict_types=1);
 
-
 namespace VolodymyrKlymniuk\SwooleServerBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
@@ -23,11 +22,8 @@ class SwooleServerExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(dirname(__DIR__).'/Resources/config'));
         $loader->load('services.yaml');
-
         $configuration = new Configuration();
-
         $config = $this->processConfiguration($configuration, $configs);
-
         $definition = $container->getDefinition(Server::class);
         $definition->replaceArgument(0, $config['host']);
         $definition->replaceArgument(1, $config['port']);

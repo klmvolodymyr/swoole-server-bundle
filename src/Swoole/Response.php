@@ -15,11 +15,13 @@ class Response
         if (headers_sent()) {
             return;
         }
-
-        $allHeadersWithoutCookies = $symfonyResponse->headers->allPreserveCaseWithoutCookies();
         // headers
+        $allHeadersWithoutCookies = $symfonyResponse->headers->allPreserveCaseWithoutCookies();
+
         foreach ($allHeadersWithoutCookies as $name => $values) {
+
             foreach ($values as $value) {
+
                 if ($value) {
                     $response->header($name, (string) $value);
                 }

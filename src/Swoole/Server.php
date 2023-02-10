@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace VolodymyrKlymniuk\SwooleServerBundle\Swoole;
 
-use Swoole\Process;
+//use Swoole\Process;
 use Symfony\Component\HttpKernel\KernelInterface;
 use VolodymyrKlymniuk\SwooleServerBundle\Exception\SwooleException;
 use Upscale\Swoole\Blackfire\Profiler;
@@ -129,7 +129,7 @@ class Server
      */
     public function stop(): bool
     {
-        $kill = Process::kill($this->getPid());
+        $kill = \Swoole\Process::kill($this->getPid());
 
         if (!$kill) {
             throw new SwooleException("Swoole server not stopped!");
@@ -146,7 +146,7 @@ class Server
      */
     public function reload(): bool
     {
-        $reload = Process::kill($this->getPid(), SIGUSR1);
+        $reload = \Swoole\Process::kill($this->getPid(), SIGUSR1);
 
         if (!$reload) {
             throw new SwooleException("Swoole server not reloaded!");
@@ -166,7 +166,7 @@ class Server
             return false;
         }
 
-        Process::kill($pid, 0);
+        \Swoole\Process::kill($pid, 0);
 
         return !swoole_errno();
     }

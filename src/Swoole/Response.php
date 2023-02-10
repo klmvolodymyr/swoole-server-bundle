@@ -19,7 +19,6 @@ class Response
         $allHeadersWithoutCookies = $symfonyResponse->headers->allPreserveCaseWithoutCookies();
 
         foreach ($allHeadersWithoutCookies as $name => $values) {
-
             foreach ($values as $value) {
 
                 if ($value) {
